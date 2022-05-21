@@ -1,19 +1,8 @@
 #ifndef CLIENT_H
 #define CLIENT_H
 #include<asio.hpp>
-#include "Headers.h"
+#include "..\HeaderDirectory\Headers.h"
 #include "ClientManager.h"
-enum class  CLIENT_TYPE : uint8_t
-{
-	OWNER = 0x0F0F,
-	CLIENT = 0xF0F0,
-};
-
-enum class CONNECTION_TYPE : uint8_t
-{
-	PASSIVE = 0xFFFF,
-	ACTIVE = 0x0000,
-};
 
 namespace CONCEPT
 {
@@ -40,7 +29,7 @@ public:
 
 class Owner : public Client
 {
-	CONNECTION_TYPE m_connType;
+	
 };
 
 class Zombie : public Client

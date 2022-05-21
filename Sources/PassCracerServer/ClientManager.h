@@ -10,7 +10,8 @@ class ClientManager
 	std::atomic<bool> m_mutex;
 
 public:
-	ClientManager() : m_mutex(true) {}
+	ClientManager() : m_mutex(true) 
+	{}
 	void addClient(const Client* client)
 	{
 		m_mutex.wait(true);
