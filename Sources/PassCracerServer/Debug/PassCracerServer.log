@@ -1,0 +1,12 @@
+﻿  main.cpp
+  Please define _WIN32_WINNT or _WIN32_WINDOWS appropriately. For example:
+  - add -D_WIN32_WINNT=0x0601 to the compiler command line; or
+  - add _WIN32_WINNT=0x0601 to your project's Preprocessor Definitions.
+  Assuming _WIN32_WINNT=0x0601 (i.e. Windows 7 target).
+A:\Repo\PassCracerServer\PassCracerServer\Client.h(7,2): warning C4309: "inicjowanie": obcięcie stałej wartości
+A:\Repo\PassCracerServer\PassCracerServer\Client.h(7,16): warning C4369: "CLIENT_TYPE::OWNER": moduł wyliczający wartość "3855" nie może być przedstawiony jako "unsigned char", wartość to "15"
+A:\Repo\PassCracerServer\PassCracerServer\Client.h(8,2): warning C4309: "inicjowanie": obcięcie stałej wartości
+A:\Repo\PassCracerServer\PassCracerServer\Client.h(8,17): warning C4369: "CLIENT_TYPE::CLIENT": moduł wyliczający wartość "61680" nie może być przedstawiony jako "unsigned char", wartość to "240"
+A:\Repo\PassCracerServer\PassCracerServer\Client.h(13,2): warning C4309: "inicjowanie": obcięcie stałej wartości
+A:\Repo\PassCracerServer\PassCracerServer\Client.h(13,18): warning C4369: "CONNECTION_TYPE::PASSIVE": moduł wyliczający wartość "65535" nie może być przedstawiony jako "unsigned char", wartość to "255"
+  PassCracerServer.vcxproj -> A:\Repo\PassCracerServer\Debug\PassCracerServer.exe
