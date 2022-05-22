@@ -34,10 +34,22 @@ public:
 };
 class STATISTIC_HEADER : public BASE_HEADER
 {
-	uint64_t m_executeTime;
+public:
+	enum class STYPE
+	{
+		GHZ,
+		EXECUTE_TIME,
+		THREAD_COUNTER,
+		AMOUNT_OF_ZOMBIES,
+	};
+private:
+	
+	uint64_t m_data;
+	STYPE m_type;
 	struct StructStatisticHeader
 	{
 		uint64_t executeTime;
+		STYPE type;
 	};
 public:
 	typedef StructStatisticHeader StatisticHeader;
@@ -114,7 +126,12 @@ public:
 
 class FINISHED_TASK_HEADER : public BASE_HEADER
 {
+	bool m_result;
 public:
-	FINISHED_TASK_HEADER() : BASE_HEADER(TYPE_HEADER::FINISHED_TASK) {}
+	FINISHED_TASK_HEADER(bool result) :m_result(result), BASE_HEADER(TYPE_HEADER::FINISHED_TASK) {}
+	bool getResult() { return m_result; }
 };
+
+
+
 #endif
