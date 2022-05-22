@@ -32,7 +32,7 @@
     <ClInclude Include="Engine.h">
       <Filter>Pliki zasobów\Engines</Filter>
     </ClInclude>
-    <ClInclude Include="..\HeaderDirectory\Headers.h">
+    <ClInclude Include="..\..\..\Sources\HeaderDirectory\Headers.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
   </ItemGroup>

@@ -47,7 +47,7 @@ public:
 		StatisticHeader header = { .executeTime = m_executeTime };
 		return header;
 	}
-	CONST_EXPR_SIZE(StaticHeader)
+	CONST_EXPR_SIZE(StatisticHeader)
 };
 
 class QUEST_HEADER : public BASE_HEADER

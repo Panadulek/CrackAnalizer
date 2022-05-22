@@ -5,17 +5,18 @@ class AbstractEngine
 protected:
 	AbstractEngine() {}
 public:
-	virtual  operator()(void) process() = 0;
+	virtual  void process() = 0;
 };
 
-class RangeEngine
+class SimpleEngine
 {
-	size_t m_pos;
 public:
-	operator()(void) process()
+	virtual void process()
 	{
 
 	}
-	size_t getPos() { return m_pos; }
 };
+
+
+
 #endif 

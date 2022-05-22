@@ -5,27 +5,38 @@
 #include "Client.h"
 class ClientManager
 {
-	std::list<const Client*> m_queue;
-	Client m_manager;
+	std::list<Client*> m_clients;
 	std::atomic<bool> m_mutex;
-
+	Owner* m_owner;
 public:
-	ClientManager() : m_mutex(true) 
-	{}
-	void addClient(const Client* client)
+	void setOwner(Owner* owner)
 	{
-		m_mutex.wait(true);
-		m_queue.push_back(client);
+		m_owner = owner;
+	}
+	void addClient(Client* c)
+	{
+		m_mutex.wait(false);
+		m_clients.push_back(c);
 		m_mutex.notify_all();
 	}
-	void removeClient(const Client* client)
+	void removeClient(Client* c)
 	{
-		m_mutex.wait(true);
-		unsigned ret = m_queue.remove(client);
+		m_mutex.wait(false);
+		m_clients.remove(c);
 		m_mutex.notify_all();
 	}
-	template<CONCEPT::Message TYPE>
-	void send(const char* message, size_t size);
+	size_t getClientsCounter()
+	{
+		m_mutex.wait(false);
+		size_t size = m_clients.size();
+		m_mutex.notify_all();
+		return size;
+	}
+	template<CONCEPT::Engine EngineType>
+	void process(const EngineType &engine)
+	{
+
+	}
 };
 
 #endif

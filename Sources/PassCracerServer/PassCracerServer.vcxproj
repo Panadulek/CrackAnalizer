@@ -146,7 +146,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\HeaderDirectory\Headers.h" />
+    <ClInclude Include="..\..\..\Sources\HeaderDirectory\Headers.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="ClientManager.h" />
     <ClInclude Include="Engine.h" />
