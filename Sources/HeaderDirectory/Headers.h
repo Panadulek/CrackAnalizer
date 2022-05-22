@@ -35,7 +35,7 @@ public:
 class STATISTIC_HEADER : public BASE_HEADER
 {
 public:
-	enum class STYPE
+	enum class STYPE : uint8_t
 	{
 		GHZ,
 		EXECUTE_TIME,
@@ -126,7 +126,7 @@ public:
 
 class FINISHED_TASK_HEADER : public BASE_HEADER
 {
-	bool m_result;
+	uint8_t m_result;
 public:
 	FINISHED_TASK_HEADER(bool result) :m_result(result), BASE_HEADER(TYPE_HEADER::FINISHED_TASK) {}
 	bool getResult() { return m_result; }
